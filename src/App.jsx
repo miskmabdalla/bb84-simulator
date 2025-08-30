@@ -7,6 +7,7 @@ import Home from './Pages/Home';
 import Alice from './Pages/Alice/Alice';
 import Bob from './Pages/Bob/Bob';
 import Eve from './Pages/Eve/Eve';
+import SelectPhotons from './Pages/Alice/SelectPhotons';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="/alice" element={<Alice />} />
             <Route path="/bob" element={<Bob />} />
             <Route path="/eve" element={<Eve />} />
+            <Route path="/alice/step1" element={<SelectPhotons />} />
             {/* Add more routes here as needed */}
           </Routes>
         </BrowserRouter>
