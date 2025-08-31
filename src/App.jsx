@@ -11,6 +11,7 @@ import SelectPhotons from './Pages/Alice/SelectPhotons';
 import BobPhotons from './Pages/Alice/BobPhotons';
 import React from 'react';
 import CommonBasis from './Pages/Alice/CommonBasis';
+import SharedKey from './Pages/Alice/SharedKey';
 import { useState } from 'react';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -68,7 +69,7 @@ function App() {
             <Route path="/alice/step1" element={<SelectPhotons photons={photons} setPhotons={setPhotons} />} />
             <Route path="/alice/step2" element={<BobPhotons photons={photons} bobPhotons={bobPhotons} />} />
             <Route path="/alice/common" element={<CommonBasis photons={photons} bobPhotons={bobPhotons} />} />
-            {/* Add more routes here as needed */}
+            <Route path="/alice/sharedkey" element={<SharedKey photons={photons} bobPhotons={bobPhotons} />} />
           </Routes>
         </BrowserRouter>
       </div>

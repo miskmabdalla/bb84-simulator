@@ -1,8 +1,10 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import PhotonDisplay from '../../Components/PhotonDisplay';
 import NavigationButtons from '../../Components/NavigationButtons';
 
 function CommonBasis({ photons, bobPhotons }) {
+  const navigate = useNavigate();
   // Find common basis indices
   const commonIndices = photons.map((photon, i) => photon.selectedBasis === bobPhotons[i].selectedBasis);
 
@@ -12,7 +14,7 @@ function CommonBasis({ photons, bobPhotons }) {
         <h2 className="text-2xl font-bold text-green-500 mt-6 mb-2 uppercase">ALICE'S PHOTONS</h2>
         <NavigationButtons
           onPrev={() => window.history.back()}
-          onNext={() => {}}
+          onNext={() => navigate('/alice/sharedkey')}
         />
         <div className="w-full flex flex-col items-center mt-8">
           <div className="flex gap-3 pb-2 justify-center" style={{ minWidth: 'fit-content' }}>
