@@ -5,7 +5,7 @@ function Bob() {
 	const navigate = useNavigate();
 	return (
 		<div className="flex items-center justify-center min-h-screen">
-			<div className="relative w-[900px] h-[600px] border-4 border-green-500 rounded-xl flex flex-col items-center justify-center">
+			<div className="relative w-[900px] h-[600px] border-4 border-green-500  flex flex-col items-center justify-center">
 				<NavigationButtons
 					onPrev={() => navigate(-1)}
 					onNext={() => navigate('/eve')}
