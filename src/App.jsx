@@ -13,6 +13,9 @@ import React from 'react';
 import CommonBasis from './Pages/Alice/CommonBasis';
 import SharedKey from './Pages/Alice/SharedKey';
 import WhyBB84 from './Pages/Tutorial/WhyBB84';
+import QubitEncoding from './Pages/Tutorial/QubitEncoding';
+import Transmission from './Pages/Tutorial/Transmission';
+import BobMeasurements from './Pages/Tutorial/BobMeasurements';
 import { useState } from 'react';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -71,6 +74,9 @@ function App() {
             <Route path="/alice/common" element={<CommonBasis photons={photons} bobPhotons={bobPhotons} />} />
             <Route path="/alice/sharedkey" element={<SharedKey photons={photons} bobPhotons={bobPhotons} />} />
             <Route path="/tutorial/whybb84" element={<WhyBB84 />} />
+            <Route path="/tutorial/qubitencoding" element={<QubitEncoding />} />
+            <Route path="/tutorial/transmission" element={<Transmission />} />
+            <Route path="/tutorial/bobmeasurements" element={<BobMeasurements />} />
           </Routes>
         </BrowserRouter>
   <div className="mb-2 text-xs text-gray-500 text-center">

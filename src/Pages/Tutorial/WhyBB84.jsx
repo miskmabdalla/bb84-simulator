@@ -1,16 +1,18 @@
 import NavigationButtons from '../../Components/NavigationButtons';
+import { useNavigate } from 'react-router-dom';
 import aliceIcon from '../../assets/alice.png';
 import bobIcon from '../../assets/bob.png';
 import eveIcon from '../../assets/eve.png';
 
 function WhyBB84() {
+  const navigate = useNavigate();
   return (
     <div className="flex items-center justify-center min-h-screen">
   <div className="relative w-[900px] h-[600px] border-4 border-green-500 flex flex-col items-center justify-center mb-4">
   <h1 className="text-3xl font-bold text-green-700 mb-2">Why BB84?</h1>
         <NavigationButtons
           onPrev={() => window.history.back()}
-          onNext={() => {}}
+          onNext={() => navigate('/tutorial/qubitencoding')}
         />
         {/* Visual Split-Screen Diagram */}
         <div className="flex w-full justify-center items-center mt-8 mb-2 gap-0">
