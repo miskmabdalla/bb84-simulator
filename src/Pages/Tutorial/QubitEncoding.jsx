@@ -1,0 +1,66 @@
+import NavigationButtons from '../../Components/NavigationButtons';
+
+function QubitEncoding() {
+  // Example data for 8 qubits
+  const bits = [0, 1, 0, 1, 1, 0, 0, 1];
+  const bases = ['+', '×', '+', '+', '×', '×', '+', '×'];
+  const encoded = bits.map((bit, i) => {
+    if (bases[i] === '+') {
+      return bit === 0 ? '|0⟩' : '|1⟩';
+    } else {
+      return bit === 0 ? '|+⟩' : '|−⟩';
+    }
+  });
+
+  return (
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="relative w-[900px] h-[600px] border-4 border-green-500 flex flex-col items-center justify-center mb-4">
+        <h1 className="text-3xl font-bold text-green-700 mt-2 mb-2">Encoding Random Qubits</h1>
+        <NavigationButtons
+          onPrev={() => window.history.back()}
+          onNext={() => {}}
+        />
+        <div className="mt-4 text-lg text-green-700 font-semibold text-center px-8">
+          <p>Alice generates two random strings:</p>
+          <ul className="list-disc list-inside mt-2 mb-2 text-left">
+            <li>A raw bit string (0s and 1s).</li>
+            <li>A random basis string (Rectilinear + or Diagonal ×).</li>
+          </ul>
+          <p>She encodes each bit in the chosen basis:</p>
+          <ul className="list-disc list-inside mt-2 mb-2 text-left">
+            <li>0 in + basis = |0⟩, 1 in + basis = |1⟩</li>
+            <li>0 in × basis = |+⟩, 1 in × basis = |−⟩</li>
+          </ul>
+        </div>
+        {/* Visual Table */}
+        <div className="mt-4 w-full flex flex-col items-center">
+          <table className="table-auto border-collapse w-3/4 text-center">
+            <thead>
+              <tr className="bg-green-100">
+                <th className="border px-4 py-2">Qubit #</th>
+                <th className="border px-4 py-2">Bit</th>
+                <th className="border px-4 py-2">Basis</th>
+                <th className="border px-4 py-2">Encoded State</th>
+              </tr>
+            </thead>
+            <tbody>
+              {bits.map((bit, i) => (
+                <tr key={i} className="bg-white">
+                  <td className="border px-4 py-2">{i + 1}</td>
+                  <td className="border px-4 py-2">{bit}</td>
+                  <td className="border px-4 py-2">{bases[i]}</td>
+                  <td className="border px-4 py-2">{encoded[i]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="mt-4 text-sm text-gray-700 text-center px-8">
+          <strong>Technical note:</strong> Alice does not tell Bob which basis she used.
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default QubitEncoding;

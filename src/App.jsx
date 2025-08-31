@@ -12,6 +12,7 @@ import BobPhotons from './Pages/Alice/BobPhotons';
 import React from 'react';
 import CommonBasis from './Pages/Alice/CommonBasis';
 import SharedKey from './Pages/Alice/SharedKey';
+import WhyBB84 from './Pages/Tutorial/WhyBB84';
 import { useState } from 'react';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -56,9 +57,8 @@ function App() {
   }, [photons]);
 
   return (
-    <div className="relative flex items-center justify-center min-h-screen">
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] border-4 border-green-500 z-0"></div>
-      <div className="relative z-10 w-full flex items-center justify-center">
+    <div className="flex flex-col min-h-screen justify-center items-center">
+  <div className="flex-1 flex flex-col items-center justify-center" style={{ minHeight: '600px' }}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -70,8 +70,15 @@ function App() {
             <Route path="/alice/step2" element={<BobPhotons photons={photons} bobPhotons={bobPhotons} />} />
             <Route path="/alice/common" element={<CommonBasis photons={photons} bobPhotons={bobPhotons} />} />
             <Route path="/alice/sharedkey" element={<SharedKey photons={photons} bobPhotons={bobPhotons} />} />
+            <Route path="/tutorial/whybb84" element={<WhyBB84 />} />
           </Routes>
         </BrowserRouter>
+  <div className="mb-2 text-xs text-gray-500 text-center">
+          Alice, Bob, and Eve icons: 
+          <a href="https://www.flaticon.com/free-icons/8-bit" title="8 bit icons" target="_blank" rel="noopener noreferrer" className="underline ml-1">
+            8 bit icons created by frelayasia - Flaticon
+          </a>
+        </div>
       </div>
     </div>
   );

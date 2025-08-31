@@ -10,7 +10,7 @@ function Home() {
 			</div>
 			<button
 				className="text-green-500 text-xl px-8 py-4 border outline outline-2 hover:cursor-pointer border-green-500 outline-green-500 transition-colors duration-200 hover:bg-green-500 hover:text-black"
-				onClick={() => navigate('/select')}
+				onClick={() => navigate('/tutorial/whybb84')}
 			>
 				START
 			</button>
