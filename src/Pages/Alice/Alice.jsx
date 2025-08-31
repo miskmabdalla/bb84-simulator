@@ -5,13 +5,13 @@ function Alice() {
   const navigate = useNavigate();
   return (
     <div className="flex items-center justify-center min-h-screen">
-      <div className="relative w-[900px] h-[600px] border-4 border-green-500 rounded-xl flex flex-col items-center justify-center">
+      <div className="relative w-[900px] h-[600px] border-4 border-green-500 flex flex-col items-center justify-center">
         <NavigationButtons
           onPrev={() => navigate(-1)}
           onNext={() => navigate('step1')}
         />
-        <h1 className="text-3xl font-bold text-green-500 mb-6">Alice's Page</h1>
-        <p className="text-lg text-green-500">Welcome, Alice! Here you can send photons.</p>
+        <h1 className="text-3xl font-bold text-green-500 mb-6">ALICE'S PAGE</h1>
+        <p className="text-lg text-green-500">WELCOME, ALICE! HERE YOU CAN SEND PHOTONS.</p>
       </div>
     </div>
   );
