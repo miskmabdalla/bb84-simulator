@@ -3,7 +3,7 @@ function PlayerButton({ playerName, playerDesc, onClick }) {
   return (
     <div className="flex flex-col items-center group">
       <button
-        className="btn-big"
+        className="btn-big w-35"
         onClick={onClick}
       >
         {playerName}
