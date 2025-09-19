@@ -8,7 +8,7 @@ function BobPhotons({ photons, bobPhotons }) {
   const navigate = useNavigate();
   const [showBob, setShowBob] = useState(false);
   useEffect(() => {
-    const timer = setTimeout(() => setShowBob(true), 1600);
+    const timer = setTimeout(() => setShowBob(true), 500);
     return () => clearTimeout(timer);
   }, [photons]);
 
@@ -17,6 +17,7 @@ function BobPhotons({ photons, bobPhotons }) {
       <NavigationButtons
         onPrev={() => window.history.back()}
         onNext={() => navigate('/alice/common')}
+        nextDisabled={!showBob}
       />
         {/* Overlay both photon rows absolutely centered */}
           <div style={{ position: 'absolute', left: '50%', top: '35%', width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', transform: 'translate(-50%, -50%)' }}>
