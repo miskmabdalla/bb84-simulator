@@ -40,38 +40,39 @@ function SelectPhotons({ photons, setPhotons }) {
 		setPhotons(getInitialPhotons(n));
 	};
 
-	return (
-		<GreenRectangleContainer>
-			<NavigationButtons
-				onPrev={() => window.history.back()}
-				onNext={() => navigate('/alice/step2')}
-			/>
-			<div className="mb-8">
-				<label htmlFor="numPhotons" className="text-green-500 font-bold mr-2 uppercase">NUMBER OF PHOTONS:</label>
-				<select
-					id="numPhotons"
-					value={numPhotons}
-					onChange={handleNumChange}
-					className="px-4 py-2 bg-gray-900 text-white border border-green-500"
-				>
-					{Array.from({ length: 6 }, (_, i) => i + 3).map(num => (
-						<option key={num} value={num}>{num}</option>
-					))}
-				</select>
-			</div>
-			<div className="flex gap-3 pb-2 justify-center" style={{ minWidth: 'fit-content' }}>
-				{photons.map((photon, index) => (
-					<PhotonDisplay
-						key={index}
-						photon={photon}
-						selectable={true}
-						onBitSelect={(bit) => handleBitToggle(index, bit)}
-						onBasisSelect={(basis) => handleBasisToggle(index, basis)}
+			return (
+				<GreenRectangleContainer>
+					<NavigationButtons
+						onPrev={() => window.history.back()}
+						onNext={() => navigate('/alice/step2')}
 					/>
-				))}
-			</div>
-		</GreenRectangleContainer>
-	);
+					<h2 className="text-2xl font-bold text-green-500 mt-6 mb-4 uppercase text-center">Select photon value and basis</h2>
+					<div className="mb-8">
+									<label htmlFor="numPhotons" className="text-green-500 font-bold mr-2 uppercase">NUMBER OF PHOTONS:</label>
+									<select
+										id="numPhotons"
+										value={numPhotons}
+										onChange={handleNumChange}
+										className="px-4 py-2 bg-gray-900 text-white border border-green-500"
+									>
+										{Array.from({ length: 6 }, (_, i) => i + 3).map(num => (
+											<option key={num} value={num}>{num}</option>
+										))}
+									</select>
+								</div>
+				<div className="flex gap-3 pb-2 justify-center" style={{ minWidth: 'fit-content' }}>
+					{photons.map((photon, index) => (
+						<PhotonDisplay
+							key={index}
+							photon={photon}
+							selectable={true}
+							onBitSelect={(bit) => handleBitToggle(index, bit)}
+							onBasisSelect={(basis) => handleBasisToggle(index, basis)}
+						/>
+					))}
+				</div>
+			</GreenRectangleContainer>
+		);
 }
 
 export default SelectPhotons;

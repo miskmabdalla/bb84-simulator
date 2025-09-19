@@ -3,16 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import GreenRectangleContainer from '../../Components/GreenRectangleContainer';
 
 function QubitEncoding() {
-  // Example data for 4 qubits
-  const bits = [0, 1, 0, 1];
-  const bases = ['+', '×', '+', '×'];
-  const encoded = bits.map((bit, i) => {
-    if (bases[i] === '+') {
-      return bit === 0 ? '|0⟩' : '|1⟩';
-    } else {
-      return bit === 0 ? '|+⟩' : '|−⟩';
-    }
-  });
+  // Show all possible combinations explicitly
+  const tableRows = [
+    { bit: 0, basis: '+', encoded: '|0⟩' },
+    { bit: 1, basis: '+', encoded: '|1⟩' },
+    { bit: 0, basis: '×', encoded: '|+⟩' },
+    { bit: 1, basis: '×', encoded: '|−⟩' },
+  ];
 
   const navigate = useNavigate();
   return (
@@ -45,11 +42,11 @@ function QubitEncoding() {
             </tr>
           </thead>
           <tbody>
-            {bits.map((bit, i) => (
+            {tableRows.map((row, i) => (
               <tr key={i}>
-                <td className="border px-4 py-2">{bit}</td>
-                <td className="border px-4 py-2">{bases[i]}</td>
-                <td className="border px-4 py-2">{encoded[i]}</td>
+                <td className="border px-4 py-2">{row.bit}</td>
+                <td className="border px-4 py-2">{row.basis}</td>
+                <td className="border px-4 py-2">{row.encoded}</td>
               </tr>
             ))}
           </tbody>
