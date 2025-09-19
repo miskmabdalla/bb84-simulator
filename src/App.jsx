@@ -87,7 +87,7 @@ function App() {
             <Route path="/tutorial/detectingeve" element={<DetectingEve />} />
           </Routes>
         </BrowserRouter>
-      <div className="mt-15 mb-2 text-xs text-gray-500 text-center">
+      <div className="mt-10 mb-2 text-xs text-gray-500 text-center">
         Alice, Bob, and Eve icons:
         <a href="https://www.flaticon.com/free-icons/8-bit" title="8 bit icons" target="_blank" rel="noopener noreferrer" className="underline ml-1">
           8 bit icons created by frelayasia - Flaticon
