@@ -88,11 +88,14 @@ function App() {
           </Routes>
         </BrowserRouter>
       <div className="mt-10 mb-2 text-xs text-gray-500 text-center">
+      {/* Website created by <a href="https://github.com/miskmabdalla/" target="_blank" rel="noopener noreferrer" className="underline hover:text-green-600">Misk Abdalla</a> :) | */}
         Alice, Bob, and Eve icons:
         <a href="https://www.flaticon.com/free-icons/8-bit" title="8 bit icons" target="_blank" rel="noopener noreferrer" className="underline ml-1">
           8 bit icons created by frelayasia - Flaticon
         </a>
-        </div>
+        <br />
+        <span className="block mt-2 text-green-500">Website created by <a href="https://github.com/miskmabdalla/" target="_blank" rel="noopener noreferrer" className="underline hover:text-green-600">Misk Abdalla</a> :)</span>
+      </div>
       </div>
     </div>
   );
