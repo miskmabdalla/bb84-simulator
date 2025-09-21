@@ -22,7 +22,7 @@ import BasisReconciliation from './Pages/Tutorial/BasisReconciliation';
 import DetectingEve from './Pages/Tutorial/DetectingEve';
 import { useState } from 'react';
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   // Helper to generate initial photons
@@ -66,7 +66,7 @@ function App() {
   return (
     <div className="flex flex-col min-h-screen justify-center items-center">
       <div className="flex-1 flex flex-col items-center justify-center" style={{ minHeight: '600px' }}>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/select" element={<PlayerSelection />} />
@@ -86,7 +86,7 @@ function App() {
             <Route path="/tutorial/basisreconciliation" element={<BasisReconciliation />} />
             <Route path="/tutorial/detectingeve" element={<DetectingEve />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       <div className="mt-10 mb-2 text-xs text-gray-500 text-center">
       {/* Website created by <a href="https://github.com/miskmabdalla/" target="_blank" rel="noopener noreferrer" className="underline hover:text-green-600">Misk Abdalla</a> :) | */}
         Alice, Bob, and Eve icons:
