@@ -3,6 +3,7 @@ import { useState } from 'react';
 import PhotonDisplay from '../../Components/PhotonDisplay';
 import NavigationButtons from '../../Components/NavigationButtons';
 import { useNavigate } from 'react-router-dom';
+import GreenRectangleContainer from '../../Components/GreenRectangleContainer';
 // Single correct getInitialPhotons function
 function getInitialPhotons(num) {
 	return Array.from({ length: num }).map(() => ({
@@ -39,26 +40,26 @@ function SelectPhotons({ photons, setPhotons }) {
 		setPhotons(getInitialPhotons(n));
 	};
 
-	return (
-		<div className="flex items-center justify-center min-h-screen">
-			<div className="relative w-[900px] h-[600px] border-4 border-green-500 flex flex-col items-center justify-center">
-				<NavigationButtons
-					onPrev={() => window.history.back()}
-					onNext={() => navigate('/alice/step2')}
-				/>
-				<div className="mb-8">
-					<label htmlFor="numPhotons" className="text-green-500 font-bold mr-2 uppercase">NUMBER OF PHOTONS:</label>
-					<select
-						id="numPhotons"
-						value={numPhotons}
-						onChange={handleNumChange}
-						className="px-4 py-2 bg-gray-900 text-white border border-green-500"
-					>
-						{Array.from({ length: 6 }, (_, i) => i + 3).map(num => (
-							<option key={num} value={num}>{num}</option>
-						))}
-					</select>
-				</div>
+			return (
+				<GreenRectangleContainer>
+					<NavigationButtons
+						onPrev={() => window.history.back()}
+						onNext={() => navigate('/alice/step2')}
+					/>
+					<h2 className="text-2xl font-bold text-green-500 mt-6 mb-4 uppercase text-center">Select photon value and basis</h2>
+					<div className="mb-8">
+									<label htmlFor="numPhotons" className="text-green-500 font-bold mr-2 uppercase">NUMBER OF PHOTONS:</label>
+									<select
+										id="numPhotons"
+										value={numPhotons}
+										onChange={handleNumChange}
+										className="px-4 py-2 bg-gray-900 text-white border border-green-500"
+									>
+										{Array.from({ length: 6 }, (_, i) => i + 3).map(num => (
+											<option key={num} value={num}>{num}</option>
+										))}
+									</select>
+								</div>
 				<div className="flex gap-3 pb-2 justify-center" style={{ minWidth: 'fit-content' }}>
 					{photons.map((photon, index) => (
 						<PhotonDisplay
@@ -70,9 +71,8 @@ function SelectPhotons({ photons, setPhotons }) {
 						/>
 					))}
 				</div>
-			</div>
-		</div>
-	);
+			</GreenRectangleContainer>
+		);
 }
 
 export default SelectPhotons;

@@ -1,7 +1,8 @@
-import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import PhotonDisplay from '../../Components/PhotonDisplay';
 import NavigationButtons from '../../Components/NavigationButtons';
+import GreenRectangleContainer from '../../Components/GreenRectangleContainer';
+import { motion } from 'framer-motion';
 
 function CommonBasis({ photons, bobPhotons }) {
   const navigate = useNavigate();
@@ -9,15 +10,16 @@ function CommonBasis({ photons, bobPhotons }) {
   const commonIndices = photons.map((photon, i) => photon.selectedBasis === bobPhotons[i].selectedBasis);
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className="relative w-[900px] h-[600px] border-4 border-green-500 flex flex-col items-center justify-start">
-        <h2 className="text-2xl font-bold text-green-500 mt-6 mb-2 uppercase">ALICE'S PHOTONS</h2>
-        <NavigationButtons
-          onPrev={() => window.history.back()}
-          onNext={() => navigate('/alice/sharedkey')}
-        />
-        <div className="w-full flex flex-col items-center mt-8">
-          <div className="flex gap-3 pb-2 justify-center" style={{ minWidth: 'fit-content' }}>
+    <GreenRectangleContainer>
+      <NavigationButtons
+        onPrev={() => window.history.back()}
+        onNext={() => navigate('/alice/sharedkey')}
+      />
+      <div style={{ position: 'absolute', left: '50%', top: '47.75%', width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', transform: 'translate(-50%, -50%)' }}>
+        {/* Alice's photons row */}
+        <div style={{ position: 'relative', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', zIndex: 2 }}>
+          <h2 className="text-2xl font-bold text-green-500 mt-6 mb-2 uppercase">ALICE'S PHOTONS</h2>
+          <div id='alice-photons' style={{ display: 'flex', flexDirection: 'row', gap: '12px', justifyContent: 'center', alignItems: 'center' }}>
             {photons.map((photon, index) => (
               <PhotonDisplay
                 key={index}
@@ -27,8 +29,11 @@ function CommonBasis({ photons, bobPhotons }) {
               />
             ))}
           </div>
-          <h2 className="text-2xl font-bold text-green-500 mt-12 mb-2 uppercase">BOB'S PHOTONS</h2>
-          <div className="flex gap-3 pb-2 justify-center" style={{ minWidth: 'fit-content' }}>
+        </div>
+        {/* Bob's photons row */}
+        <div style={{ position: 'relative', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', zIndex: 1 }}>
+          <h2 className="text-2xl font-bold text-green-500 mt-15 mb-2 uppercase">BOB'S PHOTONS</h2>
+          <div id='bob-photons' style={{ display: 'flex', flexDirection: 'row', gap: '12px', justifyContent: 'center', alignItems: 'center' }}>
             {bobPhotons.map((photon, index) => (
               <PhotonDisplay
                 key={index}
@@ -40,7 +45,7 @@ function CommonBasis({ photons, bobPhotons }) {
           </div>
         </div>
       </div>
-    </div>
+    </GreenRectangleContainer>
   );
 }
 
