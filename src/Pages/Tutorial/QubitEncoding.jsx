@@ -14,12 +14,12 @@ function QubitEncoding() {
   const navigate = useNavigate();
   return (
     <GreenRectangleContainer>
-      <h1 className="text-3xl font-bold text-green-500 mt-2 mb-2">Encoding Random Qubits</h1>
+      <h1 className="text-3xl font-bold text-green-700 mt-2 mb-2">Encoding Random Qubits</h1>
       <NavigationButtons
         onPrev={() => window.history.back()}
         onNext={() => navigate('/tutorial/transmission')}
       />
-      <div className="mt-4 text-lg text-green-500 font-semibold text-center px-8">
+      <div className="mt-4 text-lg text-green-700 font-semibold text-center px-8">
         <p>Alice generates two random strings:</p>
         <ul className="list-disc list-inside mt-2 mb-2 text-left">
           <li>A raw bit string (0s and 1s).</li>
@@ -52,7 +52,7 @@ function QubitEncoding() {
           </tbody>
         </table>
       </div>
-      <div className="mt-4 text-sm text-green-500 text-center px-8">
+      <div className="mt-4 text-sm text-green-700 text-center px-8">
         Alice does not tell Bob which basis she used.
       </div>
     </GreenRectangleContainer>

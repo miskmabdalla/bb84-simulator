@@ -14,12 +14,12 @@ function BasisReconciliation() {
 
   return (
     <GreenRectangleContainer>
-      <h1 className="text-3xl font-bold text-green-500 mt-0 mb-2">Public Basis Comparison</h1>
+      <h1 className="text-3xl font-bold text-green-700 mt-0 mb-2">Public Basis Comparison</h1>
       <NavigationButtons
         onPrev={() => window.history.back()}
         onNext={() => navigate('/tutorial/detectingeve')}
       />
-      <div className="mt-4 text-lg text-green-500 font-semibold text-center px-8">
+      <div className="mt-4 text-lg text-green-700 font-semibold text-center px-8">
         <p>Now, Alice and Bob reveal their basis choices over the classical channel (but not the bit values!).<br />
         They discard all positions where their bases differ.<br />
         The remaining bits form the sifted key.</p>
@@ -45,7 +45,7 @@ function BasisReconciliation() {
           </tbody>
         </table>
       </div>
-      <div className="mt-4 text-lg text-green-500 font-semibold text-center px-8">
+      <div className="mt-4 text-lg text-green-700 font-semibold text-center px-8">
         <span className="italic">Technical note:</span> On average, ~50% of bits are discarded.
       </div>
     </GreenRectangleContainer>
